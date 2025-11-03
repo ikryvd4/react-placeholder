@@ -34,3 +34,6 @@
 - `git reset --hard <commit-id>` - можна вказати
 
 > Ідеально буде зробити git clean -fd + git reset --hard
+
+- git push --all origin
+  > Запушити всі гілки на github
