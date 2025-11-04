@@ -4,7 +4,7 @@ import type { CounterContextType } from "./types";
 
 const CounterContext = createContext<CounterContextType | null>(null);
 
-export function ContextProvider({ children }: { children: React.ReactNode }) {
+export function CounterProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(counterReducer, initialState);
 
   return (

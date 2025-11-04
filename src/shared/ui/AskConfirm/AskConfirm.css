@@ -1,0 +1,54 @@
+.ask-reset {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  height: 100%;
+  padding: 24px 32px;
+  border-radius: 16px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  text-align: center;
+}
+
+.ask-reset__title {
+  font-size: 1.25rem;
+  color: #222;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.ask-reset__buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.ask-reset__btn {
+  min-width: 100px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.ask-reset__btn--yes {
+  background-color: #2a7aef;
+  color: #fff;
+}
+
+.ask-reset__btn--yes:hover {
+  background-color: #1d5fd4;
+}
+
+.ask-reset__btn--no {
+  background-color: #e5e5e5;
+  color: #333;
+}
+
+.ask-reset__btn--no:hover {
+  background-color: #ccc;
+}

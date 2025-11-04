@@ -15,6 +15,8 @@ export function counterReducer(
       return { count: state.count - 1 };
     case "RND":
       return { count: action.payload };
+    case "RESET":
+      return { count: 0 };
     default:
       return state;
   }

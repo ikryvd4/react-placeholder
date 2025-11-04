@@ -23,3 +23,8 @@ body {
   border: 1px solid #fff;
   padding: 1rem;
 }
+
+.info {
+  font-size: 30px;
+  text-transform: uppercase;
+}

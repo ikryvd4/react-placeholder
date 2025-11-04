@@ -1,24 +1,30 @@
-import { useCounter, ContextProvider } from "./context/counter/CounterContext";
-import { onIncrement, onDecrement, onRandom } from "./context/counter/action";
+import { useCounter } from "./context/counter/CounterProvider";
+import { useModal } from "./context/modal/ModalProvider";
+import { AskConfirm } from "@shared/ui/AskConfirm/AskConfirm";
+import {
+  onIncrement,
+  onDecrement,
+  onRandom,
+  onReset,
+} from "./context/counter/action";
+//---------------------------------------------------------------------------
+import NumberFlow from "@number-flow/react";
 
 import "./App.css";
 
-export default function App() {
-  return (
-    <>
-      <ContextProvider>
-        <Content></Content>
-      </ContextProvider>
-    </>
-  );
-}
-
-function Content() {
+export function App() {
+  const { openModal, closeModal } = useModal();
   const { count, dispatch } = useCounter();
 
   const handleRandom = () => {
-    const rnd = Math.floor(Math.random() * 10);
+    const rnd = Math.floor(Math.random() * 100);
     dispatch(onRandom(rnd));
+    closeModal();
+  };
+
+  const handleReset = () => {
+    dispatch(onReset());
+    closeModal();
   };
 
   return (
@@ -38,12 +44,41 @@ function Content() {
         >
           Decrement
         </button>
-        <button type="button" className="button" onClick={handleRandom}>
+        <button
+          type="button"
+          className="button"
+          onClick={() =>
+            openModal(
+              <AskConfirm
+                onClose={closeModal}
+                onConfirm={handleRandom}
+                title="Are you sure you want to random the counter?"
+              />
+            )
+          }
+        >
           Random
+        </button>
+        <button
+          type="button"
+          className="button"
+          onClick={() =>
+            openModal(
+              <AskConfirm
+                onClose={closeModal}
+                onConfirm={handleReset}
+                title="Are you sure you want to reset the counter?"
+              />
+            )
+          }
+        >
+          Reset
         </button>
       </div>
 
-      <div className="info">Counter: {count}</div>
+      <div className="info">
+        Counter: <NumberFlow value={count} />
+      </div>
     </>
   );
 }

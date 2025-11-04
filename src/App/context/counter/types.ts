@@ -7,7 +7,8 @@ export type CounterType = {
 export type ActionType =
   | ReturnType<typeof onIncrement>
   | ReturnType<typeof onRandom>
-  | ReturnType<typeof onDecrement>;
+  | ReturnType<typeof onDecrement>
+  | { type: "RESET" };
 
 export type CounterContextType = {
   count: number;
