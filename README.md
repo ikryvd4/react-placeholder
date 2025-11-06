@@ -1,27 +1,11 @@
 # Counter Context with useReducer
 
-> В цілому гарний варіант але треба буде прописувати типізацію руками
+#### experiment/counter
 
-- БУЛО 🔔
+> Звичайний counter, реалізація через Context API ( useReducer ) з модальним вікном
 
-```tsx
-import { ACTIONS } from "./action";
-
-export type ActionType =
-  | { type: typeof ACTIONS.INC }
-  | { type: typeof ACTIONS.DEC }
-  | { type: typeof ACTIONS.RND; payload: number };
-```
-
-> Перевага у тому що автоматично підхватуються типізація, яка вже по суті прописана
-
-- СТАЛО 🔔
-
-```tsx
-import { onDecrement, onIncrement, onRandom } from "./action";
-
-export type ActionType =
-  | ReturnType<typeof onIncrement>
-  | ReturnType<typeof onRandom>
-  | ReturnType<typeof onDecrement>;
-```
+- Increment, Decrement, Random(with modal), Reset(with modal)
+- Є Модальні підтвердження на збрасування та рандом
+- Модальне вікно має `openModal(<AskConfirm close={closeModal}/>)` завдяки чому відкривається
+- Анімація для лічільника `NumberFlow`
+- Модальне вікно (без анімації)
