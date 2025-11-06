@@ -1,36 +1,32 @@
 import { createContext, useState, useContext } from "react";
 import Modal from "@components/atoms/Modal/Modal";
 
-type ModalNane = "modal1" | "modal2" | null;
-
 type ModalContextType = {
-  activeModal: ModalNane;
-  openModal: (name: ModalNane) => void;
+  isOpen: boolean;
+  openModal: (name: React.ReactNode) => void;
   closeModal: () => void;
 };
 
 const ModalContext = createContext<ModalContextType | null>(null);
 
 export function ModalProvider({ children }: { children: React.ReactNode }) {
-  const [activeModal, setActiveModal] = useState<ModalNane>(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [content, setContent] = useState<React.ReactNode>(null);
 
-  const openModal = (name: ModalNane) => setActiveModal(name);
-  const closeModal = () => setActiveModal(null);
+  const openModal = (node: React.ReactNode) => {
+    setIsOpen(true);
+    setContent(node);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+    setContent(null);
+  };
 
   return (
-    <ModalContext.Provider value={{ activeModal, openModal, closeModal }}>
+    <ModalContext.Provider value={{ isOpen, openModal, closeModal }}>
       {children}
-      <Modal isOpen={activeModal === "modal1"} onClose={closeModal}>
-        <h3>modal 1</h3>
-        <div>Зміст можна винести в окремий компонент</div>
-      </Modal>
-      <Modal
-        isOpen={activeModal === "modal2"}
-        onClose={closeModal}
-        activeModal={activeModal}
-      >
-        <h3>modal 2</h3>
-        <div>Зміст можна винести в окремий компонент</div>
+      <Modal isOpen={isOpen} onClose={closeModal}>
+        {content}
       </Modal>
     </ModalContext.Provider>
   );
