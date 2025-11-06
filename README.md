@@ -1,6 +1,6 @@
 # Counter Context with useReducer
 
-#### experiment/counter
+#### feature/counter-modals-confirm
 
 > Звичайний counter, реалізація через Context API ( useReducer ) з модальним вікном
 
@@ -9,3 +9,4 @@
 - Модальне вікно має `openModal(<AskConfirm close={closeModal}/>)` завдяки чому відкривається
 - Анімація для лічільника `NumberFlow`
 - Модальне вікно (без анімації)
+- В цілому вийшов чудовий додаток
