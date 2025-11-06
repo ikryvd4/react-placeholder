@@ -1,4 +1,4 @@
-.ask-reset {
+.ask-confirm {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,20 +12,20 @@
   text-align: center;
 }
 
-.ask-reset__title {
+.ask-confirm__title {
   font-size: 1.25rem;
   color: #222;
   line-height: 1.4;
   margin: 0;
 }
 
-.ask-reset__buttons {
+.ask-confirm__buttons {
   display: flex;
   gap: 12px;
   margin-top: auto;
 }
 
-.ask-reset__btn {
+.ask-confirm__btn {
   min-width: 100px;
   padding: 10px 18px;
   border-radius: 8px;
@@ -35,20 +35,20 @@
   transition: all 0.25s ease;
 }
 
-.ask-reset__btn--yes {
+.ask-confirm__btn--yes {
   background-color: #2a7aef;
   color: #fff;
 }
 
-.ask-reset__btn--yes:hover {
+.ask-confirm__btn--yes:hover {
   background-color: #1d5fd4;
 }
 
-.ask-reset__btn--no {
+.ask-confirm__btn--no {
   background-color: #e5e5e5;
   color: #333;
 }
 
-.ask-reset__btn--no:hover {
+.ask-confirm__btn--no:hover {
   background-color: #ccc;
 }
