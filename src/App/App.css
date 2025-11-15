@@ -1,102 +1,50 @@
-#root {
-  background-color: #1c2022;
-  color: white;
-  height: 2000px;
-  padding: 50px;
+@import "../shared/assets/styles/nullstyle.css";
+
+html {
+  font-size: 10px;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-*,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-:active {
-  outline: none;
-}
-:focus {
-  /* outline: none; // В зависомости от проекта */
-  /* border: 10px solid yellow; */
-}
-
-nav,
-footer,
-header,
-aside {
-  display: block;
-}
-
-html,
 body {
-  height: 100%;
-  width: 100%;
-  font-size: 100%;
-  line-height: 1;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  font-size: 1.6rem;
+  background-color: #1e1e1e;
+  color: #ffffff;
 }
 
-input,
-textarea {
-  font-family: inherit;
-  outline: none;
-  background: transparent;
+#root {
+  overflow: hidden;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-button {
-  font-family: inherit;
-  background: none;
-  border: none;
+[class*="__container"] {
+  max-width: 123rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  /* border: 1px solid #424242; */
+}
+
+.main {
+  border: 1px solid #424242;
+  flex: 1 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
   padding: 0;
-  color: inherit;
-  cursor: pointer;
-}
-
-input::-ms-clear {
-  display: none;
-}
-
-button::-moz-focus-inner {
-  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
   border: 0;
+  white-space: nowrap;
 }
 
-a {
-  color: inherit;
-  cursor: pointer;
-}
-
-a,
-a:visited,
-a:hover {
-  text-decoration: none;
-}
-
-a:focus,
-a:active {
-  outline: none;
-}
-
-ul li {
-  list-style: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  /* Желательно добавить общие стили через SCSS */
-  font-size: inherit;
-  font-weight: 400;
+.header,
+.footer {
+  border: 1px solid #424242;
+  padding: 25px 0px;
+  background-color: #262626;
 }
