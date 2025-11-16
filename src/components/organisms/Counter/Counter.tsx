@@ -1,9 +1,16 @@
-import { useCounter } from "@app/store/CounterContext";
+// import { useCounter } from "@app/store/CounterContext";
 
+import { useDispatch, useSelector } from "react-redux";
 import css from "./Counter.module.css";
 
+type State = {
+  counter: number;
+};
+
 export function Counter() {
-  const { state, dispatch } = useCounter();
+  // const { state, dispatch } = useCounter();
+  const dispatch = useDispatch();
+  const state = useSelector((state: State) => state.counter);
 
   const onIncrement = () => {
     dispatch({ type: "INC" });
@@ -37,7 +44,7 @@ export function Counter() {
           Random
         </button>
       </div>
-      <div className={css.content}>{state.counter}</div>
+      <div className={css.content}>{state}</div>
     </div>
   );
 }

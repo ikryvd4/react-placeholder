@@ -5,6 +5,8 @@ type CounterContextType = {
   dispatch: React.Dispatch<Action>;
 };
 
+const CounterContext = createContext<CounterContextType | null>(null);
+
 type State = {
   counter: number;
 };
@@ -14,8 +16,6 @@ type Action =
   | { type: "DEC" }
   | { type: "RND"; payload: number }
   | { type: "RESET" };
-
-const CounterContext = createContext<CounterContextType | null>(null);
 
 function reducer(state: State, action: Action) {
   switch (action.type) {

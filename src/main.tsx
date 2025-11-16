@@ -1,13 +1,14 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { CounterProvider } from "@app/store/CounterContext";
+import { Provider } from "react-redux";
+import { store } from "@app/store/counter/store";
 
 import App from "@app/App.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <CounterProvider>
+    <Provider store={store}>
       <App />
-    </CounterProvider>
+    </Provider>
   </StrictMode>
 );
