@@ -1,0 +1,14 @@
+.items {
+  padding: 3rem 0rem;
+}
+
+.item {
+  padding: 1rem;
+  border: 1px solid white;
+  margin-bottom: 1rem;
+}
+
+.button {
+  border: 1px solid white;
+  padding: 1rem;
+}
