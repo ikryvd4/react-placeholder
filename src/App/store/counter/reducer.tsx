@@ -1,10 +1,10 @@
-import { type State, type Action } from "./types";
+import { type CounterState, type ActionCounter } from "./types";
 
-const initialState: State = {
+const initialState: CounterState = {
   counter: 0,
 };
 
-export function reducer(state = initialState, action: Action) {
+export function counterReducer(state = initialState, action: ActionCounter) {
   switch (action.type) {
     case "INC":
       return { ...state, counter: state.counter + 1 };

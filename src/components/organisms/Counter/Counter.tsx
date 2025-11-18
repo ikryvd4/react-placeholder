@@ -48,7 +48,7 @@ export function Counter() {
           Random
         </button>
       </div>
-      <div className={css.content}>{state}</div>
+      <div className={css.content}>{state.counter}</div>
     </div>
   );
 }

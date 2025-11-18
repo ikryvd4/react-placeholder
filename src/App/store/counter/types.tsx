@@ -1,8 +1,8 @@
-export type State = {
+export type CounterState = {
   counter: number;
 };
 
-export type Action =
+export type ActionCounter =
   | { type: "INC" }
   | { type: "DEC" }
   | { type: "RND"; payload: number }

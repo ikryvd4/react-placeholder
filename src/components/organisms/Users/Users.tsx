@@ -1,22 +1,32 @@
-import { useState } from "react";
-import { fetchApi } from "@shared/api/users";
-import css from "./Users.module.css";
+// import { useState } from "react";
+// import { fetchApi } from "@shared/api/users";
 
-type UsersType = {
-  id: number;
-  name: string;
-};
+import { useEffect } from "react";
+import css from "./Users.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchUsers } from "@app/store/users/thunks";
+import { type AppDispatch } from "@app/store";
 
 export function Users() {
-  const [users, setUsers] = useState<UsersType[]>([]);
+  // const [users, setUsers] = useState<UsersType[]>([]);
 
-  const handleFetch = () => {
-    fetchApi.getUsers().then((json) => setUsers(json));
-  };
+  const { users } = useSelector((state) => state.users);
+
+  console.log(users);
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, []);
+
+  // const handleFetch = () => {
+  //   fetchApi.getUsers().then((json) => setUsers(json));
+  // };
 
   return (
     <>
-      <button type="button" className={css.button} onClick={handleFetch}>
+      <button type="button" className={css.button}>
         FETCH
       </button>
 
