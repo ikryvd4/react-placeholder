@@ -1,0 +1,28 @@
+.wrapper {
+  padding: 2rem 0;
+}
+
+.title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.item {
+  padding: 2rem;
+  border: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  padding: 1rem;
+  background-color: #0070f3;
+}
