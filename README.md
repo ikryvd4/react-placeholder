@@ -6,12 +6,6 @@
 > RTK have: Boilerplate - меньше коду
 > RTK have: immer - mutation checks (не думай про імутацію)
 
-redux/basic
-redux/thunk
-redux/saga
-redux/toolkit
-redux/toolkit-query
-
 @@@@@@@@@@@@@@@@@@@@
 
 - `createStore(reducer, _)` - DEAD

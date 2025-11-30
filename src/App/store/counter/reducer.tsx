@@ -4,7 +4,7 @@ const initialState: State = {
   counter: 0,
 };
 
-export function reducer(state = initialState, action: Action) {
+export function reducerCounter(state = initialState, action: Action) {
   switch (action.type) {
     case "INC":
       return { ...state, counter: state.counter + 1 };

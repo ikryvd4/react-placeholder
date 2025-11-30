@@ -1,3 +1,5 @@
+// ЗВИЧАЙНИЙ ПРИКЛАД КОНТЕКСТУ З USE-REDUCER
+
 import { createContext, useContext, useReducer } from "react";
 
 type CounterContextType = {
