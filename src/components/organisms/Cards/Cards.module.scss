@@ -1,0 +1,11 @@
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  padding: 5rem 1rem;
+  border: 1px solid black;
+  word-break: break-word;
+}

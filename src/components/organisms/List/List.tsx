@@ -3,7 +3,10 @@ import { Item } from "@components/molecules/Item/Item";
 import styles from "./List.module.scss";
 
 export function List() {
-  const { todos } = useAppSelector((state) => state.todos);
+  const todos = useAppSelector((state) => state.todos.todos);
+  console.log(todos);
+
+  console.log(todos);
   return (
     <ul className={styles.list}>
       {todos.map((item) => (

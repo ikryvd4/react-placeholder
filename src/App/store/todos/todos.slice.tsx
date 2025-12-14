@@ -1,7 +1,7 @@
 import { createSlice, nanoid, type PayloadAction } from "@reduxjs/toolkit";
 import type { TodoItem, TodoState } from "./todos.types";
 
-const initialState: TodoState = {
+export const initialState: TodoState = {
   todos: [],
   view: "list",
 };
@@ -24,11 +24,24 @@ export const todosSlice = createSlice({
         };
       },
     },
+    editTodo(state, action: PayloadAction<{ id: string; title: string }>) {
+      const todo = state.todos.find((t) => t.id === action.payload.id);
+      if (todo) todo.title = action.payload.title;
+    },
+
     deleteTodo(state, action: PayloadAction<string>) {
       state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+    },
+    completeTodo(state, action: PayloadAction<string>) {
+      const todo = state.todos.find((t) => t.id === action.payload);
+      if (todo) todo.completed = !todo.completed;
+    },
+    toogleView(state) {
+      state.view = state.view === "list" ? "card" : "list";
     },
   },
 });
 
-export const { addTodo, deleteTodo } = todosSlice.actions;
+export const { addTodo, deleteTodo, editTodo, completeTodo, toogleView } =
+  todosSlice.actions;
 export const todosReducer = todosSlice.reducer;

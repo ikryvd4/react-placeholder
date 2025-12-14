@@ -2,9 +2,17 @@
   padding: 1rem;
   border: 1px solid #424242;
   display: flex;
+  gap: 1rem;
   justify-content: space-between;
   align-items: center;
+  word-break: break-word;
+
   &:not(:last-child) {
     margin-bottom: 1rem;
   }
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
 }
