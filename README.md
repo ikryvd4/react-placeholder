@@ -6,7 +6,6 @@
 
 ---
 
-- Спробуй використити універсальний Local Storage
 - Розбери бібліотеку для Local Storage
 - Зробити спільну Local Storage ще з темою.
 - Підключити Modal Provider

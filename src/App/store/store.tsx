@@ -1,8 +1,9 @@
 import {configureStore} from "@reduxjs/toolkit";
-import {todosReducer} from "./todos/todos.slice";
 import {useDispatch, useSelector} from "react-redux";
 import {loadState, saveState} from "./localStorage";
+import {todosReducer} from "./todos/todos.slice";
 import {counterReducer} from "./counter/counter.slice";
+import {themeReducer} from "@app/store/theme/theme.slice.tsx";
 
 const preloadedState = loadState();
 
@@ -10,6 +11,7 @@ export const store = configureStore({
     reducer: {
         todos: todosReducer,
         counter: counterReducer,
+        theme: themeReducer,
     },
     preloadedState,
 });

@@ -1,5 +1,6 @@
 import {todosReducer} from "@app/store/todos/todos.slice";
 import {counterReducer} from "@app/store/counter/counter.slice";
+import {themeReducer} from "@app/store/theme/theme.slice.tsx";
 
 // export type RootState = {
 //   todos: TodoState;
@@ -7,6 +8,7 @@ import {counterReducer} from "@app/store/counter/counter.slice";
 // };
 
 type RootState = {
+    theme: ReturnType<typeof themeReducer>;
     todos: ReturnType<typeof todosReducer>;
     counter: ReturnType<typeof counterReducer>;
 };
@@ -28,6 +30,7 @@ export const saveState = (state: RootState) => {
         const serializedState = {
             todos: state.todos,
             counter: state.counter,
+            theme: state.theme,
         };
 
         localStorage.setItem("todosState", JSON.stringify(serializedState));

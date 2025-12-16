@@ -1,0 +1,22 @@
+import s from './Header.module.scss';
+import {useTheme} from "@shared/hooks/useTheme/useTheme.tsx";
+
+
+export function Header() {
+    const {theme, toggle} = useTheme()
+
+
+    return (
+        <header className={s.header}>
+            <div className={`${s.headerContainer} + header__container`}>
+                <div className="logo">LOGO</div>
+                <button type='button'
+                        className="button"
+                        onClick={toggle}>
+                    SWITCH: {theme}
+                </button>
+            </div>
+        </header>
+    )
+}
+
