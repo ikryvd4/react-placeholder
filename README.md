@@ -2,8 +2,19 @@
 
 - Local Storage (without Library)
 - Project: [Delete, Create, View, LocalStorage, dark theme]
-- TypeScript
+- TypeScript Store
+- hooks: [useTheme, useInput]
+- utils: [localStorage: [loadState, saveState]]
 
 ---
 
-- Розбери бібліотеку для Local Storage
+### use prepare
+
+```
+reducers: {
+  addTodo: {
+      reducer(state, action: PayloadAction<TodoItem>) {...},
+      prepare(title: string) {...},
+  },
+}
+```
