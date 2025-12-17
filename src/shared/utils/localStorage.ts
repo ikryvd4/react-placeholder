@@ -1,5 +1,6 @@
 // Універсальні функції для роботи з localStorage
-// preloadedState: loadState<RootState>(STORAGE_KEY),
+
+// Використання: preloadedState: loadState<RootState>(STORAGE_KEY),
 export const loadState = <T>(key: string): T | undefined => {
   try {
     const serializedState = localStorage.getItem(key);
@@ -10,7 +11,8 @@ export const loadState = <T>(key: string): T | undefined => {
     return undefined;
   }
 };
-//saveState(STORAGE_KEY, store.getState());
+
+// Використання: saveState(STORAGE_KEY, store.getState());
 export const saveState = <T>(key: string, state: T): void => {
   try {
     const serializedState = JSON.stringify(state);
@@ -19,6 +21,9 @@ export const saveState = <T>(key: string, state: T): void => {
     console.error(`Cannot save state to "${key}"`, e);
   }
 };
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 export const removeState = (key: string): void => {
   try {
